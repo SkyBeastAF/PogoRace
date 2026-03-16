@@ -2526,6 +2526,7 @@ GameObject:
   - component: {fileID: 1588101338}
   - component: {fileID: 1588101337}
   - component: {fileID: 1588101336}
+  - component: {fileID: 1588101339}
   m_Layer: 0
   m_Name: Red Pickup
   m_TagString: Untagged
@@ -2643,6 +2644,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1588101339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588101335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78bf7fb49a88384aab21d29bfd0cb37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PogoProject.RedPickUpScript
+  colorChanger: {fileID: 0}
+  layerChanger: {fileID: 0}
 --- !u!1 &1752999078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,6 +3379,7 @@ GameObject:
   - component: {fileID: 1886864767}
   - component: {fileID: 1886864766}
   - component: {fileID: 1886864765}
+  - component: {fileID: 1886864768}
   m_Layer: 0
   m_Name: Red Pickup (1)
   m_TagString: Untagged
@@ -3481,6 +3497,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1886864768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886864764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b8be2452bf2ee49b47cfe9a7809a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PogoProject.BluePickUpScript
+  colorChanger: {fileID: 0}
+  layerChanger: {fileID: 0}
 --- !u!1 &1947981760
 GameObject:
   m_ObjectHideFlags: 0
