@@ -1851,6 +1851,7 @@ GameObject:
   - component: {fileID: 689057182}
   - component: {fileID: 689057183}
   - component: {fileID: 689057184}
+  - component: {fileID: 689057185}
   m_Layer: 8
   m_Name: Test Player Object
   m_TagString: Player
@@ -2053,6 +2054,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39c274c9eaa6c044a9a3ae2fcc7cb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorChanger
+--- !u!114 &689057185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689057176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29facc0a9d35f9e489863666944f4b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GyroscopeRotation
 --- !u!1 &696401344
 GameObject:
   m_ObjectHideFlags: 0
