@@ -4,37 +4,33 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PogoTest : MonoBehaviour
 {
-    [Header("Bounce")]
     
     public float bounceForce = 18f;
 
-    
+    [Tooltip("Extra force added while the player holds the jump button (held bounce).")]
     public float chargeBonus = 8f;
 
-    
+    [Tooltip("How long (seconds) the player can hold the button to add charge.")]
     public float maxChargeTime = 0.4f;
 
-    [Header("Ground Detection")]
     
-    public LayerMask groundLayer;
-
     [Tooltip("Small downward offset for the ground-check ray origin, relative to collider bottom.")]
     public float groundCheckOffset = 0.05f;
 
     [Tooltip("Radius of the overlap circle used for ground detection.")]
     public float groundCheckRadius = 0.15f;
 
-    [Header("Squash & Stretch (optional)")]
     
+    [Tooltip("Child transform used for visual squash/stretch. Leave empty to skip.")]
     public Transform pogoVisual;
 
-    
+    [Tooltip("How squashed the visual gets on a hard landing (0 = no squash).")]
     public float squashAmount = 0.35f;
 
-    
+    [Tooltip("How fast the squash recovers back to normal scale.")]
     public float squashRecoverySpeed = 12f;
 
-   
+    
     private Rigidbody2D _rb;
     private Collider2D  _col;
 
@@ -46,7 +42,7 @@ public class PogoTest : MonoBehaviour
     private Vector3 _baseVisualScale;    // original scale of the visual child
     private float   _currentSquash = 1f; // 1 = normal
 
-    
+   
     void Awake()
     {
         _rb  = GetComponent<Rigidbody2D>();
@@ -79,7 +75,7 @@ public class PogoTest : MonoBehaviour
     {
         _isGrounded = CheckGrounded();
 
-        
+       
         if (_isGrounded && !_wasGrounded)
         {
             Bounce();
@@ -88,11 +84,12 @@ public class PogoTest : MonoBehaviour
         _wasGrounded = _isGrounded;
     }
 
-    
+ 
     void Bounce()
     {
         // Kill current vertical velocity so every bounce feels consistent
         _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0f);
+        _rb.angularVelocity = 0f;
 
         // Calculate charge bonus (clamped to maxChargeTime)
         float chargeRatio  = Mathf.Clamp01(_chargeTimer / maxChargeTime);
@@ -107,7 +104,7 @@ public class PogoTest : MonoBehaviour
         TriggerSquash(chargeRatio);
     }
 
-    
+   
     bool CheckGrounded()
     {
         // Find the bottom centre of the collider
@@ -115,10 +112,13 @@ public class PogoTest : MonoBehaviour
         Vector2 checkPoint = new Vector2(bounds.center.x,
                                          bounds.min.y - groundCheckOffset);
 
+        // Derive the collidable mask from the player's current layer at runtime.
+        // This automatically reflects any layer changes made elsewhere in code.
+        LayerMask groundLayer = Physics2D.GetLayerCollisionMask(gameObject.layer);
         return Physics2D.OverlapCircle(checkPoint, groundCheckRadius, groundLayer);
     }
 
-    
+   
     void TriggerSquash(float chargeRatio)
     {
         if (pogoVisual == null) return;
@@ -146,7 +146,7 @@ public class PogoTest : MonoBehaviour
         );
     }
 
-    
+  
     void OnDrawGizmosSelected()
     {
         if (_col == null) _col = GetComponent<Collider2D>();
