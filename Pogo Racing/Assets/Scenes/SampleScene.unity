@@ -2247,7 +2247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GyroscopeRotation
   smoothSpeed: 30
-  invertRotation: 0
+  invertRotation: 1
   editorKeyboardSpeed: 90
 --- !u!1 &696401344
 GameObject:
@@ -3957,8 +3957,8 @@ Transform:
   m_GameObject: {fileID: 1679044943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.84, y: 17.51, z: 0}
-  m_LocalScale: {x: 1.5983844, y: 0.6346, z: 0.6346}
+  m_LocalPosition: {x: -2.0416, y: 17.51, z: 0}
+  m_LocalScale: {x: 2.001497, y: 0.6346, z: 0.6346}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4855,7 +4855,7 @@ Transform:
   m_GameObject: {fileID: 1976663360}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.49, y: 17.48, z: 0}
+  m_LocalPosition: {x: 2.49, y: 17.51, z: 0}
   m_LocalScale: {x: 0.73231745, y: 0.7515, z: 0.7515}
   m_ConstrainProportionsScale: 0
   m_Children: []

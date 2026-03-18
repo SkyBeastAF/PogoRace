@@ -76,7 +76,7 @@ public class GyroscopeRotation : MonoBehaviour
         Vector3 euler = corrected.eulerAngles;
 
   
-        float yaw = Mathf.DeltaAngle(0f, euler.y);
+        float yaw = Mathf.DeltaAngle(0f, euler.x);
 
         return invertRotation ? -yaw : yaw;
     }
